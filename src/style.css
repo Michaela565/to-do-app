@@ -100,6 +100,7 @@ ul ul{
 
 input[type='checkbox']{
     -webkit-appearance:none;
+    appearance: none;
     width: 20px;
     height: 20px;
     border-radius: 5px;
