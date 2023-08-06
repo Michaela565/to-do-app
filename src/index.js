@@ -1,9 +1,11 @@
 import './style.css'
 
-import {project} from "./project"
+import { project } from "./project"
+import { toDoList } from './todolist';
+import { toDoTask } from './todotask';
+import { domManipulation } from './domManipulation';
+import { idManipulation } from './idManipulation';
 
-let myProject = project("myproject", 'itsdescription');
+domManipulation.createNewToDoList("<script>alert(\"hello\")</script>", idManipulation.getNextIDToDoList());
 
-myProject.appendToDoLists("list");
-
-console.log(myProject);
+domManipulation.createNewTask("dsfsdgfsdf", 2, 1, 2, "23.4.2323", "23.23.2323");

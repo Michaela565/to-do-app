@@ -1,16 +1,17 @@
-const project = (title, description) =>{
-    const project = {
+const project = (title, description, id) =>{
+    const proto = {
         title : title,
         description : description,
+        id : id,
         todolists : []
     }
 
     const appendToDoLists = (toDoList) => {
-        project.todolists.push(toDoList);
+        proto.todolists.push(toDoList);
     }
 
     return{
-        project,
+        proto,
         appendToDoLists
     }
 }
