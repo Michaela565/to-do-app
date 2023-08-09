@@ -10,6 +10,22 @@
     <div id="content">
         <div class="book">
             <div class="pages">
+                <div class="popup" id="create-new-task-popup">
+                    <div class="popup-new-task-content">
+                        <form id="new-task-form" method="post" action="">
+                            <h2 class="larger">Create new task</h2>
+                            <div class="input-holder">
+                                <label for="desription">Description: </label>
+                                <input type="text" name="desription" id="task-desription" required>
+                            </div>
+                            <div class="input-holder">
+                                <label for="duedate">Due date: </label>
+                                <input type="date" name="duedate" id="task-duedate">
+                            </div>
+                            <button type="submit" class="submit-btn" id="closePopup-newtask">Create</button>
+                        </form>
+                    </div>
+                </div>
                 <div class="left-page">
                     <h3 class="larger">This week</h3>
                     <ul class="week">

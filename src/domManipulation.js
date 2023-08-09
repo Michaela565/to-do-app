@@ -47,6 +47,11 @@ const domManipulation = (() => {
 
         const htmlElement = elementFromHtml(btnHtmlTemplate);
 
+        htmlElement.addEventListener("click", () =>{
+            const popup = document.querySelector("#create-new-task-popup");
+            popup.classList.add("show");
+        })
+
         const list = document.querySelector(`[data-listid = "${listid}"]`);
 
         list.appendChild(htmlElement);
@@ -56,6 +61,20 @@ const domManipulation = (() => {
         const list = document.querySelector(`[data-listid = "${listid}"]`);
 
         list.removeChild(list.lastChild);
+    }
+
+    const addFormEventListener = (form) => {
+        const formData = form.addEventListener("submit", handleSubmit);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const formProps = Object.fromEntries(formData);
+
+        console.log(formProps);
+        return formProps;
     }
 
     const elementFromHtml = (html) =>{
@@ -72,7 +91,8 @@ const domManipulation = (() => {
 
     return {
         createNewToDoList,
-        createNewTask
+        createNewTask,
+        addFormEventListener
     }
 })();
 

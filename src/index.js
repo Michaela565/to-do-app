@@ -9,3 +9,6 @@ import { idManipulation } from './idManipulation';
 domManipulation.createNewToDoList("<script>alert(\"hello\")</script>", idManipulation.getNextIDToDoList());
 
 domManipulation.createNewTask("dsfsdgfsdf", 2, 1, 2, "23.4.2323", "23.23.2323");
+
+const taskForm = document.getElementById("new-task-form");
+domManipulation.addFormEventListener(taskForm);
