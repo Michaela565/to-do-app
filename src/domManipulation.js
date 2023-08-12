@@ -47,10 +47,8 @@ const domManipulation = (() => {
 
         const htmlElement = elementFromHtml(btnHtmlTemplate);
 
-        htmlElement.addEventListener("click", () =>{
-            const popup = document.querySelector("#create-new-task-popup");
-            popup.classList.add("show");
-        })
+        htmlElement.addEventListener("click", () => {
+            showPopup("create-new-task-popup") });
 
         const list = document.querySelector(`[data-listid = "${listid}"]`);
 
@@ -65,6 +63,19 @@ const domManipulation = (() => {
 
     const addFormEventListener = (form) => {
         const formData = form.addEventListener("submit", handleSubmit);
+        form.addEventListener("submit", () => {
+            hidePopup("create-new-task-popup");
+        });
+    }
+
+    const showPopup = (popupID) => {
+        const popup = document.getElementById(popupID)
+        popup.classList.add("show");
+    }
+
+    const hidePopup = (popupID) => {
+        const popup = document.getElementById(popupID);
+        popup.classList.remove("show");
     }
 
     const handleSubmit = (e) => {
@@ -76,6 +87,7 @@ const domManipulation = (() => {
         console.log(formProps);
         return formProps;
     }
+
 
     const elementFromHtml = (html) =>{
         const template = document.createElement("template");
