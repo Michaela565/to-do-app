@@ -4,7 +4,7 @@ import { project } from "./project"
 import { toDoList } from './todolist';
 import { toDoTask } from './todotask';
 import { domManipulation } from './domManipulation';
-import { idManipulation } from './idManipulation';
+import  idManipulation  from './idManipulation';
 
 domManipulation.createNewToDoList("<script>alert(\"hello\")</script>", idManipulation.getNextIDToDoList());
 

@@ -1,15 +1,18 @@
 import { getTodayDate } from "./dateManipulation"
+import * as idManipulation from "./idManipulation";
 
-const toDoTask = (description, dueDate, id, projectid, taskid) => {
+
+const toDoTask = (data) => {
     const proto = {
-        description: description,
+        description: data.description,
         dateOfCreation: getTodayDate(),
-        dueDate : dueDate,
-        id : id,
-        projectid : projectid,
-        taskid : taskid
+        dueDate : data.duedate,
+        id : idManipulation.getNextIDTask(),
+        projectid : idManipulation.getCurrentProjectID(),
+        listid : idManipulation.getNextIDToDoList()
     }
 
+    console.log(proto);
     return {proto}
 }
 
