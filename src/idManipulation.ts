@@ -8,6 +8,8 @@ const getCurrentProjectID = () => {
   return currentProjectID;
 };
 
+const getIDToDoList = () => {};
+
 const getNextIDToDoList = () => {
   const toDoLists: NodeListOf<HTMLElement> =
     document.querySelectorAll("[data-listid]");

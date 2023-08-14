@@ -14,35 +14,30 @@ const createNewToDoList = (title: string, id: number) => {
   createAddTaskBtn(id);
 };
 
-const createNewTask = (
-  description: string,
-  id: number,
-  projectid: number,
-  listid: number,
-  dueDate: Date,
-  creationDate: Date
-) => {
-  removeAddTaskBtn(listid);
+const createNewTask = (todotaskObject: any) => {
+  removeAddTaskBtn(todotaskObject.listid);
 
-  description = encodeInput(description);
+  todotaskObject.description = encodeInput(todotaskObject.description);
 
-  const taskHtmlTemplate = `<div class="todotask-object large" data-taskID = "${id}">
+  const taskHtmlTemplate = `<div class="todotask-object large" data-taskID = "${todotaskObject.id}">
     <div>
-        <input type="checkbox" name="${projectid}-${listid}-${id}" id="${projectid}-${listid}-${id}">
-        <label for="${projectid}-${listid}-${id}">${description}</label>
+        <input type="checkbox" name="${todotaskObject.projectid}-${todotaskObject.listid}-${todotaskObject.id}" id="${todotaskObject.projectid}-${todotaskObject.listid}-${todotaskObject.id}">
+        <label for="${todotaskObject.projectid}-${todotaskObject.listid}-${todotaskObject.id}">${todotaskObject.description}</label>
     </div>
     <div class="dates">
-        <div class="normal">${creationDate}</div>
-        <div>${dueDate}</div>
+        <div class="normal">${todotaskObject.creationDate}</div>
+        <div>${todotaskObject.dueDate}</div>
     </div>
 </div>`;
 
   const htmlElement = elementFromHtml(taskHtmlTemplate);
 
-  const list = document.querySelector(`[data-listid = "${listid}"]`);
+  const list = document.querySelector(
+    `[data-listid = "${todotaskObject.listid}"]`
+  );
 
   list.appendChild(htmlElement);
-  createAddTaskBtn(listid);
+  createAddTaskBtn(todotaskObject.listid);
 };
 
 const createAddTaskBtn = (listid: number) => {
@@ -67,11 +62,12 @@ const removeAddTaskBtn = (listid: number) => {
 
 const addFormEventListener = (
   form: HTMLElement,
-  callback: (data: any) => void
+  callback: (data: any) => void,
+  callbackforcallback: (data: any) => void
 ) => {
   const formData = form.addEventListener(
     "submit",
-    createHandleSubmitter(callback)
+    createHandleSubmitter(callback, callbackforcallback)
   );
   form.addEventListener("submit", () => {
     hidePopup("create-new-task-popup");
@@ -88,10 +84,14 @@ const hidePopup = (popupID: string) => {
   popup.classList.remove("show");
 };
 
-const createHandleSubmitter = (callback: (data: any) => void) => {
+const createHandleSubmitter = (
+  callback: (data: any) => void,
+  callbackforcallback: (data: any) => void
+) => {
   return (e: SubmitEvent) => {
     const data = handleSubmit(e);
-    callback(data);
+    const object = callback(data);
+    callbackforcallback(object);
   };
 };
 
