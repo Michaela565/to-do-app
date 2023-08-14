@@ -11,6 +11,8 @@ class ToDoTask {
   ) {}
 }
 
+export { ToDoTask };
+
 // const toDoTask = (data) => {
 
 //     return {

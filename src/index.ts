@@ -1,19 +1,24 @@
 import "./style.css";
 
-import { project } from "./project";
+import * as project from "./project";
 import * as todolist from "./todolist";
-import { toDoTask } from "./todotask";
+import * as todotask from "./todotask";
+import * as diary from "./diary";
 import * as domManipulation from "./domManipulation";
 import * as idManipulation from "./idManipulation";
 
-domManipulation.createNewToDoList(
-  '<script>alert("hello")</script>',
-  idManipulation.getNextIDToDoList()
+// domManipulation.createNewToDoList(
+//   '<script>alert("hello")</script>',
+//   idManipulation.getNextIDToDoList()
+// );
+
+const mainDiary = new diary.Diary("2023", 1, []);
+console.log(mainDiary.getProjectsLength());
+const firstProject = new project.Project(
+  "Learning cooking",
+  "A project where I track my journey on learning cooking",
+  3,
+  []
 );
 
-const taskForm = document.getElementById("new-task-form");
-domManipulation.addFormEventListener(
-  taskForm,
-  toDoTask,
-  domManipulation.createNewTask
-);
+firstProject.setID(firstProject.getFreeID(mainDiary));
