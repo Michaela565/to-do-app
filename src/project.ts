@@ -15,7 +15,7 @@ class Project {
   }
 
   public getFreeID(diaryObject: any) {
-    return diaryObject?.getProjectsLength?.() ?? "not a diary object";
+    return diaryObject?.getProjectsLength?.() ?? -1;
   }
 }
 
