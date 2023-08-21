@@ -14,6 +14,8 @@ class Diary extends DiaryObject {
   }
 
   public getProject(projectid: number) {
+    if (this.projects[projectid] == undefined)
+      throw new Error("This to do list does not exist");
     return this.projects[projectid];
   }
 

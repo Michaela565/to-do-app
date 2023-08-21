@@ -14,7 +14,13 @@ class ToDoList extends DiaryObject {
   }
 
   public getTasks() {
-    console.log(this.tasks);
+    return this.tasks;
+  }
+
+  public getTask(taskId: number) {
+    if (this.tasks[taskId] == undefined)
+      throw new Error("This task does not exist");
+    return this.tasks[taskId];
   }
 
   static getFreeID(projectObject: any) {

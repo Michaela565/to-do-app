@@ -18,6 +18,10 @@ class ToDoTask extends DiaryObject {
     this.dueDate = dueDate;
     this.completion = completion;
   }
+
+  static getFreeID(toDoListObject: any) {
+    return toDoListObject?.getToDoListsLength?.() ?? 0;
+  }
 }
 
 export { ToDoTask };

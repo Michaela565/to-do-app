@@ -30,7 +30,7 @@ class Project extends DiaryObject {
 
   public getToDoList(toDoListId: number): any {
     if (this.todolists[toDoListId] == undefined)
-      throw new Error("This to do list doesn't exist");
+      throw new Error("This to do list does not exist");
     return this.todolists[toDoListId];
   }
 
