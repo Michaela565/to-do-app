@@ -25,10 +25,10 @@ const secondProject = new Project(
   "Learning cooking",
   "A project where I track my journey on learning cooking",
   9,
-  []
+  ["dshfsdf"]
 );
 console.log(firstProject.getID());
 console.log(secondProject.getID());
 firstProject.setID(Project.getFreeID(mainDiary));
-console.log(firstProject.getID());
-console.log(secondProject.getID());
+console.log(firstProject.getToDoLists());
+console.log(secondProject.getToDoList(0));

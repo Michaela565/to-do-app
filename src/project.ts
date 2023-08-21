@@ -20,11 +20,21 @@ class Project extends DiaryObject {
     return diaryObject?.getProjectsLength?.() ?? 0;
   }
 
-  public getToDoListsLength() {
+  public getToDoListsLength(): number {
     return this.todolists.length;
   }
 
-  public appendToDoList(todolist: any) {
+  public getToDoLists(): any[] {
+    return this.todolists;
+  }
+
+  public getToDoList(toDoListId: number): any {
+    if (this.todolists[toDoListId] == undefined)
+      throw new Error("This to do list doesn't exist");
+    return this.todolists[toDoListId];
+  }
+
+  public appendToDoList(todolist: any): void {
     this.todolists.push(todolist);
   }
 }

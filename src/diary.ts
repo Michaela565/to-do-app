@@ -13,6 +13,10 @@ class Diary extends DiaryObject {
     return this.projects.length;
   }
 
+  public getProject(projectid: number) {
+    return this.projects[projectid];
+  }
+
   public appendProject(project: any) {
     this.projects.push(project);
   }
