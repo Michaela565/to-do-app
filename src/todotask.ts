@@ -1,6 +1,3 @@
-import { getTodayDate } from "./dateManipulation";
-import * as idManipulation from "./idManipulation";
-
 class ToDoTask {
   constructor(
     public description: string,
@@ -9,6 +6,14 @@ class ToDoTask {
     public id: number,
     public completion: boolean
   ) {}
+
+  public getID() {
+    return this.id;
+  }
+
+  public setID(value: number) {
+    this.id = value;
+  }
 }
 
 export { ToDoTask };

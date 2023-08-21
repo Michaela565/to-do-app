@@ -1,6 +1,6 @@
 import "./style.css";
 
-import * as project from "./project";
+import { Project } from "./project";
 import * as todolist from "./todolist";
 import * as todotask from "./todotask";
 import * as diary from "./diary";
@@ -14,11 +14,21 @@ import * as idManipulation from "./idManipulation";
 
 const mainDiary = new diary.Diary("2023", 1, []);
 console.log(mainDiary.getProjectsLength());
-const firstProject = new project.Project(
+const firstProject = new Project(
   "Learning cooking",
   "A project where I track my journey on learning cooking",
   3,
   []
 );
 
-firstProject.setID(firstProject.getFreeID(mainDiary));
+const secondProject = new Project(
+  "Learning cooking",
+  "A project where I track my journey on learning cooking",
+  9,
+  []
+);
+console.log(firstProject.getID());
+console.log(secondProject.getID());
+firstProject.setID(Project.getFreeID(mainDiary));
+console.log(firstProject.getID());
+console.log(secondProject.getID());

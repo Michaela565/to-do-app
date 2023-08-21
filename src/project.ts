@@ -1,21 +1,31 @@
-class Project {
+import { DiaryObject } from "./diaryObject";
+
+class Project extends DiaryObject {
+  public title: string;
+  public description: string;
+  private todolists: any[];
   constructor(
-    public title: string,
-    public description: string,
-    public id: number,
-    private todolists: any[]
-  ) {}
-
-  public getID() {
-    return this.id;
+    title: string,
+    description: string,
+    id: number,
+    todolists: any[]
+  ) {
+    super(id);
+    this.title = title;
+    this.description = description;
+    this.todolists = todolists;
   }
 
-  public setID(value: number) {
-    this.id = value;
+  static getFreeID(diaryObject: any): number {
+    return diaryObject?.getProjectsLength?.() ?? 0;
   }
 
-  public getFreeID(diaryObject: any) {
-    return diaryObject?.getProjectsLength?.() ?? -1;
+  public getToDoListsLength() {
+    return this.todolists.length;
+  }
+
+  public appendToDoList(todolist: any) {
+    this.todolists.push(todolist);
   }
 }
 

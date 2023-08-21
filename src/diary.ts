@@ -8,6 +8,10 @@ class Diary {
   public getProjectsLength() {
     return this.projects.length;
   }
+
+  public appendProject(project: any) {
+    this.projects.push(project);
+  }
 }
 
 export { Diary };
