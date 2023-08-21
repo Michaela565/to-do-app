@@ -1,16 +1,12 @@
-class ToDoList {
-  constructor(
-    public title: string,
-    public id: number,
-    private tasks: any[]
-  ) {}
+import { DiaryObject } from "./diaryObject";
 
-  public getID() {
-    return this.id;
-  }
-
-  public setID(value: number) {
-    this.id = value;
+class ToDoList extends DiaryObject {
+  public title: string;
+  private tasks: any[];
+  constructor(title: string, id: number, tasks: any[]) {
+    super(id);
+    this.title = title;
+    this.tasks = tasks;
   }
 
   public appendTask(task: any) {
@@ -21,7 +17,7 @@ class ToDoList {
     console.log(this.tasks);
   }
 
-  public getFreeID(projectObject: any) {
+  static getFreeID(projectObject: any) {
     return projectObject?.getToDoListsLength?.() ?? 0;
   }
 }

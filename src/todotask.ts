@@ -1,18 +1,22 @@
-class ToDoTask {
+import { DiaryObject } from "./diaryObject";
+
+class ToDoTask extends DiaryObject {
+  public description: string;
+  public dateOfCreation: Date;
+  public dueDate: Date;
+  public completion: boolean;
   constructor(
-    public description: string,
-    public dateOfCreation: Date,
-    public dueDate: Date,
-    public id: number,
-    public completion: boolean
-  ) {}
-
-  public getID() {
-    return this.id;
-  }
-
-  public setID(value: number) {
-    this.id = value;
+    description: string,
+    dateOfCreation: Date,
+    dueDate: Date,
+    id: number,
+    completion: boolean
+  ) {
+    super(id);
+    this.description = description;
+    this.dateOfCreation = dateOfCreation;
+    this.dueDate = dueDate;
+    this.completion = completion;
   }
 }
 

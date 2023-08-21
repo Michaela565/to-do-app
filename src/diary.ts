@@ -1,9 +1,13 @@
-class Diary {
-  constructor(
-    public title: string,
-    public id: number,
-    private projects: any[]
-  ) {}
+import { DiaryObject } from "./diaryObject";
+
+class Diary extends DiaryObject {
+  public title: string;
+  private projects: any[];
+  constructor(title: string, id: number, projects: any[]) {
+    super(id);
+    this.title = title;
+    this.projects = projects;
+  }
 
   public getProjectsLength() {
     return this.projects.length;

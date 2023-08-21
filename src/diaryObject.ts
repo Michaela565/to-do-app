@@ -15,10 +15,6 @@ class DiaryObject {
   public setID(value: number) {
     this.id = value;
   }
-
-  //   public getFreeID(objectWArray: any, arraylenghtfunc: any) {
-  //     objectWArray?.arraylenghtfunc?.() ?? 0;
-  //   }
 }
 
 export { DiaryObject };

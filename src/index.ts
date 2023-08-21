@@ -3,7 +3,7 @@ import "./style.css";
 import { Project } from "./project";
 import * as todolist from "./todolist";
 import * as todotask from "./todotask";
-import * as diary from "./diary";
+import { Diary } from "./diary";
 import * as domManipulation from "./domManipulation";
 import * as idManipulation from "./idManipulation";
 
@@ -12,7 +12,7 @@ import * as idManipulation from "./idManipulation";
 //   idManipulation.getNextIDToDoList()
 // );
 
-const mainDiary = new diary.Diary("2023", 1, []);
+const mainDiary = new Diary("2023", 5, []);
 console.log(mainDiary.getProjectsLength());
 const firstProject = new Project(
   "Learning cooking",
