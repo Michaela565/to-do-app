@@ -7,13 +7,12 @@ class ToDoTask extends DiaryObject {
   constructor(
     description: string,
     dateOfCreation: Date,
-    dueDate: Date,
     id: number,
     completion: boolean
   ) {
     super(id, description);
     this.dateOfCreation = dateOfCreation;
-    this.dueDate = dueDate;
+    this.dueDate = new Date();
     this.completion = completion;
   }
 
