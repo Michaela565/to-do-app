@@ -1,11 +1,9 @@
 import { DiaryObject } from "./diaryObject";
 
 class ToDoList extends DiaryObject {
-  public title: string;
   private tasks: any[];
   constructor(title: string, id: number, tasks: any[]) {
-    super(id);
-    this.title = title;
+    super(id, title);
     this.tasks = tasks;
   }
 

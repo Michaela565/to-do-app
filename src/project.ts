@@ -2,7 +2,6 @@ import { DiaryObject } from "./diaryObject";
 
 class Project extends DiaryObject {
   public title: string;
-  public description: string;
   private todolists: any[];
   constructor(
     title: string,
@@ -10,9 +9,8 @@ class Project extends DiaryObject {
     id: number,
     todolists: any[]
   ) {
-    super(id);
+    super(id, description);
     this.title = title;
-    this.description = description;
     this.todolists = todolists;
   }
 

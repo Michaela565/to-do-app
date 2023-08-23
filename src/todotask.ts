@@ -1,7 +1,6 @@
 import { DiaryObject } from "./diaryObject";
 
 class ToDoTask extends DiaryObject {
-  public description: string;
   public dateOfCreation: Date;
   public dueDate: Date;
   public completion: boolean;
@@ -12,8 +11,7 @@ class ToDoTask extends DiaryObject {
     id: number,
     completion: boolean
   ) {
-    super(id);
-    this.description = description;
+    super(id, description);
     this.dateOfCreation = dateOfCreation;
     this.dueDate = dueDate;
     this.completion = completion;

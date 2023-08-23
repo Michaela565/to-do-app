@@ -4,7 +4,7 @@ class Diary extends DiaryObject {
   public title: string;
   private projects: any[];
   constructor(title: string, id: number, projects: any[]) {
-    super(id);
+    super(id, "Diary has no description");
     this.title = title;
     this.projects = projects;
   }
