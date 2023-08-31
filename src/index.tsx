@@ -5,13 +5,17 @@ import * as todolist from "./todolist";
 import { ToDoTask } from "./todotask";
 import { Diary } from "./diary";
 import Task from "./reactComponents/Task";
+import DiaryDOM from "./reactComponents/Diary";
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-const taskk = new ToDoTask("a coool taaaaaask", new Date("2023-09-02"), 2, true);
 
-const todolistElement : any = document.querySelector(".todolist-object");
+const rootElement : any = document.getElementById("content");
 
-const tasksRoot = createRoot(todolistElement);
+const root = createRoot(rootElement);
+
+const deafultDiary = new Diary("deafult diary", 0, []);
+
+root.render(<DiaryDOM/>)
 
 //tasksRoot.render(<Task {...taskk}/>)

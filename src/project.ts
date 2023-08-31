@@ -1,17 +1,22 @@
 import { DiaryObject } from "./diaryObject";
 
 class Project extends DiaryObject {
-  public title: string;
+  private title: string;
   private todolists: any[];
-  constructor(
-    title: string,
-    description: string,
-    id: number,
-    todolists: any[]
-  ) {
-    super(id, description);
+  private static idIndex: number = 0;
+  constructor(title: string, description: string, todolists: any[]) {
+    super(Project.idIndex, description);
     this.title = title;
     this.todolists = todolists;
+    Project.idIndex++;
+  }
+
+  public getTitle(): string {
+    return this.title;
+  }
+
+  public setTitle(value: string): void {
+    this.title = value;
   }
 
   static getFreeID(diaryObject: any): number {
