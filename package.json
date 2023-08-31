@@ -1,0 +1,35 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "a todo app made as an assignment for the odin project",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development --open --hot",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michaela565/to-do-app.git"
+  },
+  "author": "Michaela Kurcikova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michaela565/to-do-app/issues"
+  },
+  "homepage": "https://github.com/Michaela565/to-do-app#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.1.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
